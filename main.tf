@@ -4,7 +4,7 @@ data "aws_ami" "amazon_linux" {
 
   filter {
     name   = "name"
-    values = ["a12023-ami-*-arm64"]
+    values = ["al2023-ami-*-arm64"]
   }
 }
 
@@ -44,7 +44,7 @@ resource "aws_route_table" "public" {
 }
 
 resource "aws_route_table_association" "public" {
-  subnet_id       = aws_subnet.public.id
+  subnet_id      = aws_subnet.public.id
   route_table_id = aws_route_table.public.id
 }
 
